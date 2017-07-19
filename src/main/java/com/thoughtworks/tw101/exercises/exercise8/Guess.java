@@ -14,7 +14,7 @@ public class Guess {
     Scanner input = new Scanner(System.in);
     ArrayList<Integer> guesses = new ArrayList<Integer>();
 
-    public int getGuess() throws NumberFormatException {
+    public int getGuess() {
         do {
             System.out.println("Guess a number between 1 and 100: ");
                 try {
