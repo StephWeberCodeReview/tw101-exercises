@@ -15,14 +15,16 @@ public class Guess {
     ArrayList<Integer> guesses = new ArrayList<Integer>();
 
     public int getGuess() {
+
         do {
             System.out.println("Guess a number between 1 and 100: ");
                 try {
                     guess = Integer.parseInt(input.nextLine());
+                    guesses.add(guess);
                 } catch (NumberFormatException e) {
                     System.out.println("Exception thrown: " + e);
                 }
-            guesses.add(guess);
+
         } while(guess > 100 || guess < 1);
         return guess;
     }
