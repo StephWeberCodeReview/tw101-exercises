@@ -8,7 +8,6 @@ import java.util.Random;
 
 public class GameSetup {
 
-
     Guess guess = new Guess();
 
     private int getRandomNumber() {
@@ -19,14 +18,13 @@ public class GameSetup {
 
 
     public void playGame() {
-        boolean playGame = true;
-        while (true) {
-            int answer = getRandomNumber();
-            System.out.println("Would you like to play a game? \n");
-            do {
-                int userGuess = guess.getGuess();
-                playGame = guess.checkGuess(userGuess, answer);
-            } while (playGame == true);
-        }
+        boolean stillPlaying;
+        int answer = getRandomNumber();
+        System.out.println("Would you like to play a game? \n");
+
+        do {
+            int userGuess = guess.getGuess();
+            stillPlaying = guess.checkGuess(userGuess, answer);
+        } while (stillPlaying);
     }
 }
