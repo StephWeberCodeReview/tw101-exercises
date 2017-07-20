@@ -16,16 +16,19 @@ public class Guess {
 
     public int getGuess() {
 
+        boolean validGuess = false;
         do {
             System.out.println("Guess a number between 1 and 100: ");
                 try {
                     guess = Integer.parseInt(input.nextLine());
                     guesses.add(guess);
+                    validGuess = true;
                 } catch (NumberFormatException e) {
                     System.out.println("Exception thrown: " + e);
                 }
 
-        } while(guess > 100 || guess < 1);
+        } while(!validGuess);
+        
         return guess;
     }
 
