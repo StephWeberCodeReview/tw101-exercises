@@ -26,5 +26,7 @@ public class GameSetup {
             int userGuess = guess.getGuess();
             stillPlaying = guess.checkGuess(userGuess, answer);
         } while (stillPlaying);
+
+        guess.showAllGuesses();
     }
 }

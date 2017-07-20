@@ -10,8 +10,8 @@ import java.lang.NumberFormatException;
 
 public class Guess {
 
-    Scanner input = new Scanner(System.in);
-    ArrayList<Integer> guesses = new ArrayList<Integer>();
+    private Scanner input = new Scanner(System.in);
+    private ArrayList<Integer> guesses = new ArrayList<>();
 
     public int getGuess() {
         int guess = -1;
@@ -32,24 +32,21 @@ public class Guess {
 
     public boolean checkGuess(int guess, int answer) {
         if (guess == answer) {
-            System.out.printf("You got it! The correct number was %d! \n", answer);
-            showAllGuesses();
+            System.out.format("You got it! The correct number was %d! \n", answer);
             return false;
-
         } else if (guess < answer) {
             System.out.println("Good effort! Go big or go home though.");
             return true;
         } else {
             System.out.println("Nice try! Try something smaller.");
             return true;
-
         }
     }
 
-    private void showAllGuesses() {
+    public void showAllGuesses() {
         System.out.println("Here are all your guesses: \n");
-        for(int i=0; i<guesses.size(); i++) {
-            System.out.println(guesses.get(i));
+        for (Integer guess : guesses) {
+            System.out.println(guess);
         }
         guesses.clear();
     }
