@@ -10,12 +10,11 @@ import java.lang.NumberFormatException;
 
 public class Guess {
 
-    int guess;
     Scanner input = new Scanner(System.in);
     ArrayList<Integer> guesses = new ArrayList<Integer>();
 
     public int getGuess() {
-
+        int guess = -1;
         boolean validGuess = false;
         do {
             System.out.println("Guess a number between 1 and 100: ");
@@ -28,7 +27,6 @@ public class Guess {
                 }
 
         } while(!validGuess);
-        
         return guess;
     }
 
