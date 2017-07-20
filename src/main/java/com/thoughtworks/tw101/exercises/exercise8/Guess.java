@@ -32,11 +32,7 @@ public class Guess {
     public boolean checkGuess(int guess, int answer) {
         if (guess == answer) {
             System.out.printf("You got it! The correct number was %d! \n", answer);
-            System.out.println("Here are all your guesses: \n");
-            for(int i=0; i<guesses.size(); i++) {
-                System.out.println(guesses.get(i));
-            }
-            guesses.clear();
+            showAllGuesses();
             return false;
 
         } else if (guess < answer) {
@@ -47,6 +43,14 @@ public class Guess {
             return true;
 
         }
+    }
+
+    private void showAllGuesses() {
+        System.out.println("Here are all your guesses: \n");
+        for(int i=0; i<guesses.size(); i++) {
+            System.out.println(guesses.get(i));
+        }
+        guesses.clear();
     }
 
 }
