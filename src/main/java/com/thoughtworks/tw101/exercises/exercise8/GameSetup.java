@@ -23,8 +23,8 @@ public class GameSetup {
         System.out.println("Would you like to play a game? \n");
 
         do {
-            int userGuess = guess.getGuess();
-            stillPlaying = guess.checkGuess(userGuess, answer);
+            guess.getGuess();
+            stillPlaying = guess.checkGuess(answer);
         } while (stillPlaying);
 
         guess.showAllGuesses();

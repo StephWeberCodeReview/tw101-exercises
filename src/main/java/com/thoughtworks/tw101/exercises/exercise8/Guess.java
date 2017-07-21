@@ -9,28 +9,31 @@ import java.lang.NumberFormatException;
  */
 
 public class Guess {
-
+    Integer guess;
     private Scanner input = new Scanner(System.in);
     private ArrayList<Integer> guesses = new ArrayList<>();
 
+    private Integer validateInput(String aGuess){
+        try {
+            return Integer.parseInt(aGuess);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Exception thrown: " + e);
+        }
+        return null;
+    }
+
     public int getGuess() {
-        int guess = -1;
-        boolean validGuess = false;
         do {
             System.out.println("Guess a number between 1 and 100: ");
-                try {
-                    guess = Integer.parseInt(input.nextLine());
-                    guesses.add(guess);
-                    validGuess = true;
-                } catch (NumberFormatException e) {
-                    System.out.println("Exception thrown: " + e);
-                }
+            guess = validateInput(input.nextLine());
+        } while(guess == null);
 
-        } while(!validGuess);
+        guesses.add(guess);
         return guess;
     }
 
-    public boolean checkGuess(int guess, int answer) {
+    public boolean checkGuess(int answer) {
         if (guess == answer) {
             System.out.format("You got it! The correct number was %d! \n", answer);
             return false;
