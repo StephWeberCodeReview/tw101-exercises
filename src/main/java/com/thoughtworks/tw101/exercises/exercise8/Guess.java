@@ -23,14 +23,13 @@ public class Guess {
         return null;
     }
 
-    public int getGuess() {
+    public void getGuess() {
         do {
             System.out.println("Guess a number between 1 and 100: ");
             guess = validateInput(input.nextLine());
         } while(guess == null);
 
         guesses.add(guess);
-        return guess;
     }
 
     public boolean checkGuess(int answer) {
